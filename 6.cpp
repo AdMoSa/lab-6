@@ -1,14 +1,13 @@
 # lab-6
 // question 6
 #include <iostream>
-#include<stdio.h>
 #include<string.h>
 using namespace std;
 int main()
 {
     char str[30];
     cout<<"Enter maximum 30 character of string : "<<endl;
-    gets(str);
+    cin.getline(str,30);
     cout<<endl<<"output : "<<endl;
     for(int i=strlen(str);i>=0;i--)
     {

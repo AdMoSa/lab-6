@@ -12,17 +12,40 @@ int length(char*x1)
   }
   return de;
 }
-
-
-
 char *copy(char *x1,char *x2)
 {
-   x2=x1; 
-/*int a=length(x1);
-  cout<<a;
-  for(int i=0;i<a;i++)
-  *(x2+i)=*(*x1+i);*/
+  x2=x1;
   return x2;
+}
+int compare(char*x1,char*x2)
+{
+    if(x1==x2)
+     return 1;
+    else
+     return 0;
+}
+char*chr(char*x1,char ch)
+{
+  int d;
+  char*cp;
+  for(int x=0;x<length(x1);x++)
+  {
+    if(*(x1+x)==ch)
+    {
+        d=x;
+        break;
+    }
+
+  }
+  for(int i=d;i<length(x1);i++)
+    cout<<*(x1+i);
+  return 0;
+}
+char*addstring(char*x1,char*x2)
+{
+    char*x3;
+    x3=x1+x2;
+    return x3;
 }
 int main()
 {
@@ -33,18 +56,16 @@ int main()
     a1=str1;
     char *a2=str2;
     char *a3;
-    cout<<"length of the string : "<< length(a1);
+    cout<<"length of the string a1 : "<< length(a1);
     char *d=copy(a1,a3);
-    cout<<*d;
-  
-    /* strcpy(*a3,*a2);
-    cout<<"*a3 becomes : "<<*a3<<endl;
-    strcat(str1,str2);
-    cout<<"when using strcat(str1,str2) : "<<str1<<endl;
-    cout<<"Using strlen(str1) : "<<strlen(str1);
-    cout<<endl<<"Using strcmp(str3,str2) : "<<strcmp(str3,str2);
-    cout<<endl<<"Using strchr(str1,'l') : "<<strchr(str1,'l');
-    cout<<endl<<"Using strstr(str1,str2) : "<<strstr(str1,str2);*/
-
+    cout<<endl<<"Copy of a1 in a3 : ";
+    for(int i=0;i<length(d);i++)
+    cout<<*(d+i);
+    cout<<endl<<"Compare the string a1 and a2 : "<<compare(a1,a2)<<endl;
+    cout<<" strchr(a1,'l') : " ;
+    chr(a1,'l');
+    char*a4=addstring(a1,a2);
+    for(int i=0;i<length(a4);i++)
+     cout<<*(a4+i);
     return 0;
 }
